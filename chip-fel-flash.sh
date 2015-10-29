@@ -180,7 +180,7 @@ assert_error 131
 
 if [[ "${METHOD}" == "fel" ]]; then
 	echo == upload ubi ==
-	${FEL} --progress write $UBI_MEM_ADDR "${UBI}"
+	${FEL} $(progress) write $UBI_MEM_ADDR "${UBI}"
 
 	echo == execute the main u-boot binary ==
 	${FEL} exe $UBOOT_MEM_ADDR

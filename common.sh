@@ -76,3 +76,10 @@ get_fel() {
    FEL=`/bin/which sunxi-fel 2> /dev/null` || FEL=fel
    echo $FEL
 }
+
+#------------------------------------------------------------
+progress() {
+   FEL=$(get_fel)
+   HAS_PROGRESS=1
+   ${FEL} | grep -q -- --progress && echo "--progress"
+}
