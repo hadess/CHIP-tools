@@ -4,7 +4,7 @@ SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 source $SCRIPTDIR/common.sh
 
-FEL=fel
+FEL=$(get_fel)
 
 echo "BUILDROOT_OUTPUT_DIR = $BUILDROOT_OUTPUT_DIR"
 

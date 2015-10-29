@@ -70,3 +70,9 @@ wait_for_linuxboot() {
   return 1
 }
 
+#------------------------------------------------------------
+get_fel() {
+   if test ! -f /bin/which ; then echo "fel" ; return 0; fi
+   FEL=`/bin/which sunxi-fel 2> /dev/null` || FEL=fel
+   echo $FEL
+}
