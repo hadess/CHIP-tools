@@ -153,7 +153,7 @@ BUILDROOT_OUTPUT_DIR="${FW_DIR}" ${FLASH_SCRIPT} ${FLASH_SCRIPT_OPTION} || echo 
 #  echo "ERROR: could not flash"
 #  exit 1
 #else
-#  ${SCRIPTDIR}/verify.sh
+#  ${SCRIPTDIR}/verify.py
 #fi
 
 exit $?
