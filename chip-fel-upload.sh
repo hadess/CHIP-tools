@@ -7,6 +7,10 @@ DTB=$4
 INITRD=$5
 SCRIPT=$6
 FEL=$(get_fel)
+if [ $? != 0 ] ; then
+  echo "fel is missing"
+  exit 1
+fi
 
 echo == upload the SPL to SRAM and execute it ==
 ${FEL} spl $SPL

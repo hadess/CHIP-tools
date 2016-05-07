@@ -5,6 +5,10 @@ SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $SCRIPTDIR/common.sh
 
 FEL=$(get_fel)
+if [ $? != 0 ] ; then
+  echo "ERROR: fel is missing"
+  exit 1
+fi
 
 echo "BUILDROOT_OUTPUT_DIR = $BUILDROOT_OUTPUT_DIR"
 

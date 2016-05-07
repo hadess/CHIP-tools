@@ -3,6 +3,12 @@
 SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $SCRIPTDIR/common.sh
 
+FEL=$(get_fel)
+if [ $? != 0 ] ; then
+  echo "fel is missing"
+  exit 1
+fi
+
 if ! wait_for_fel; then
   echo "ERROR: please jumper your CHIP in FEL mode then power on"
   exit 1

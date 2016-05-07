@@ -32,6 +32,10 @@ done
 echo "BUILDROOT_OUTPUT_DIR = $BUILDROOT_OUTPUT_DIR"
 
 FEL=$(get_fel)
+if [ $? != 0 ] ; then
+  echo "ERROR: fel is missing"
+  exit 1
+fi
 
 METHOD=${METHOD:-fel}
 AFTER_FLASHING=${AFTER_FLASHING:-wait}
