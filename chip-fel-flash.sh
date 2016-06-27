@@ -145,18 +145,6 @@ prepare_uboot_script() {
 	mkimage -A arm -T script -C none -n "flash CHIP" -d "${UBOOT_SCRIPT_SRC}" "${UBOOT_SCRIPT}"
 }
 
-assert_error() {
-	ERR=$?
-	ERRCODE=$1
-	if [ "${ERR}" != "0" ]; then
-		if [ -z "${ERR}" ]; then
-			exit ${ERR}
-		else
-			exit ${ERRCODE}
-		fi
-	fi
-}
-
 echo == preparing images ==
 prepare_images
 prepare_uboot_script

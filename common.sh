@@ -3,6 +3,19 @@
 TIMEOUT=30
 
 #------------------------------------------------------------
+assert_error() {
+    ERR=$?
+    ERRCODE=$1
+    if [ "${ERR}" != "0" ]; then
+        if [ -z "${ERR}" ]; then
+            exit ${ERR}
+        else
+            exit ${ERRCODE}
+        fi
+    fi
+}
+
+#------------------------------------------------------------
 onMac() {
   if [ "$(uname)" == "Darwin" ]; then
     return 0;
